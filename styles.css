@@ -1,0 +1,380 @@
+/* -   Rouge : `#c80000`
+-   Gris foncé : `#666`
+-   Gris clair (bordures et catégorie): `#ccc`
+-   du noir pour les textes et fond blanc
+*/
+
+/* * Pour les variables CSS : */
+/*
+* déclaration de variables sur le pseudo element root, on déclare un variable qui s'appelle --bg-red
+* :root représente le document CSS
+*/
+:root {
+    --bg-red: #c80000;
+    --bg-dark-grey: #666;
+    --bg-light-grey: #ccc;
+}
+
+body {
+    font-family: 'Raleway', Arial, sans-serif;
+}
+
+.header {
+    color: #fff;
+    /* position: sticky;
+    top: 0; */
+}
+
+/*
+* On se sert de la variable gràce au mot-clé : variable(nom de la variable)
+*/
+.header__title-container {
+    background-color: var(--bg-red);
+    padding: 15px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.header__theme-container {
+    background-color: var(--bg-dark-grey);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.header__title {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.header__subtitle {
+    margin-left: 10px;
+}
+
+.header__theme-title-franchise {
+    font-style: italic;
+    font-size: 1.5rem;
+}
+
+/*========main avec deux classes==============*/
+
+.container {
+    max-width: 800px;
+    margin: 15px auto;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 10px;
+    column-gap: 10px;
+    /* gap: 10px; */
+}
+
+/*=========ARTICLE PRODUITS============*/
+.product-list__item {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    border: 1px solid var(--bg-light-grey);
+    padding: 5px;
+    position: relative;
+}
+
+.product-list__item-img {
+    max-width: 100%;
+}
+
+.product-list__item-saga {
+    color: var(--bg-light-grey);
+    font-weight: bold;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--bg-light-grey);
+    padding: 3px;
+    margin: 3px;
+}
+
+.product-list__item-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 4px;
+}
+
+.product-list__item-description {
+    font-size: 0.8rem;
+    margin: 6px;
+}
+
+.product-list__item-add-to-cart {
+    color: #fff;
+    background-color: var(--bg-red);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    margin-top: auto;
+}
+
+.product-list__item-price {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.product-list__item-add-to-cart-label {
+    font-size: 0.8rem;
+    font-weight: lighter;
+}
+
+/* on a mis un <s> dans le html */
+.product-list__item-price--strike {
+    font-weight: lighter;
+    /* text-decoration: line-through; */
+    font-size: 0.8rem;
+}
+
+.footer {
+    background-color: var(--bg-dark-grey);
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.fixed-sales {
+    position: fixed;
+    left: 0;
+    top: calc(50% - 125px / 2);
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    background-color: var(--bg-red);
+    color: #fff;
+    letter-spacing: -0.1rem;
+    padding: 10px 5px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.product-list__item-promo {
+    background-color: var(--bg-dark-grey);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: 4px solid var(--bg-light-grey);
+}
+
+.images-x {
+    background-image: url('./images/deco.png');
+    /* background-repeat: no-repat; */
+    height: 12px;
+}
+
+/*===*/
+
+.notification {
+    background-color: green;
+    color: white;
+    /* notre élément est sorti du flux, et est parti se positionner relativement a body */
+    position: absolute;
+    top: 25px;
+    left: 25px;
+}
+
+.notification-bis {
+    position: relative;
+    background-color: black;
+    width: 600px;
+    height: 600px;
+    padding: 25px;
+}
+
+.notification__message {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    color: red;
+}
+
+main {
+
+    display: flex;
+    margin-left: 20%;
+    margin-right: 20%;
+    align-items: left;
+    justify-content: left;
+    text-align: left;
+    padding: 2%;
+
+
+
+}
+
+#delivery_preferences {
+
+    display: flex;
+    font-size: 2em;
+    font-weight: bold;
+    margin-left: 20%;
+    padding: 2%;
+
+}
+
+#delivery_type {
+
+    color: #666;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-bottom: 5%;
+    margin-bottom: 20px;
+    align-items: left;
+
+}
+
+#Options {
+    color: #666;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-bottom: 5%;
+    margin-bottom: 20px;
+    padding-top: 20px;
+
+
+
+}
+
+#Adresse {
+    color: #666;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-bottom: 5%;
+    margin-bottom: 20px;
+    align-items: left;
+    text-align: left;
+}
+
+
+#wrapper {
+
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: row;
+}
+
+
+.right_side {
+
+    display: block;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    margin-left: 20%;
+    text-align: left;
+
+
+}
+
+text-align: left;
+}
+
+.info_field {
+
+    text-align: left;
+    margin: 10%;
+
+
+}
+
+input[type="text"],
+label[for="rue"] {
+
+    display: block;
+    border: none;
+    border-bottom: 1px solid #666;
+    padding: 5%;
+    margin-bottom: 5%;
+    width: 300px;
+
+}
+
+#more_info {
+
+    color: #666;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding-bottom: 5%;
+    margin-bottom: 20px;
+    align-items: left;
+}
+
+#go_to_action {
+
+    display: flex;
+    font-weight: bold;
+    font-size: 1,2em;
+     justify-content: space-between;
+     margin: 25px;
+     padding: 30px;
+     border-bottom: 1px solid #d1d1d1;
+}
+
+#total {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    font-weight: bold;
+    font-size: 1, 2em;
+    margin: 25px;
+    border-top: 1px solid #d1d1d1;
+    border-bottom: 1px solid #d1d1d1;
+    padding: 50px;
+}
+
+.payement_info {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 1, 5em;
+
+
+}
+
+#price {
+
+    font-size: 1.6em;
+    color: #c80000;
+   
+}
+
+#button {
+
+    background-color: #c80000;
+    color: #fff;
+    padding: 20px;
+
+}
+#continue {
+
+    background-color: #a5a5a5;
+    color: #fff;
+    padding: 20px;
+
+}
+
+#marges {
+
+    margin-left: 20%;
+    Margin-right:20%;
+    padding: 20px;
+}
